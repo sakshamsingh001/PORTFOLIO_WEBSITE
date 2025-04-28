@@ -1,0 +1,47 @@
+#second
+{
+    width: 100%;
+    background-color: black;
+    margin-top:100px ;
+}
+.elem
+{
+    padding: 50px 40px;
+    width: 88%;
+    border-top: 1px solid #888;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+}
+.elem h1
+{
+    font-size: 6.5rem;
+    text-transform: capitalize;
+    opacity: 0.7;
+}
+#bottom-elem
+{
+    border-bottom: 1px solid #888;
+}
+#button
+{
+    padding: 20px 40px;
+  
+}
+#second button
+{
+    width: 100px;
+    border-radius: 100px;
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+}
+.elem img
+{
+    width: 30%;
+    height: 100%;
+    display: none;
+    
+}

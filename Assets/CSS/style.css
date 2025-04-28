@@ -7,14 +7,14 @@
 @import url(four.css);
 @import url(FOOTER.CSS);
 
-@font-face {
+/* @font-face {
     font-family: "GeneralSans-Medium";
     src: url(E:\PROJECT-1\Assets\fonts\GeneralSans-Medium.otf);
 }
 @font-face {
     font-family: "GeneralSans-Regular";
     src: url(E:\PROJECT-1\Assets\fonts\GeneralSans-Regular.otf);
-}
+} */
 *
 {
         margin: 0px;

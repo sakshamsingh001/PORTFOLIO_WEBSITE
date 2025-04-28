@@ -1,6 +1,5 @@
-import LocomotiveScroll from 'locomotive-scroll';
-
+console.log("njefnjeo");
 const scroll = new LocomotiveScroll({
-    el: document.querySelector('body'),
+    el: document.querySelector('#main'),   
     smooth: true
 });

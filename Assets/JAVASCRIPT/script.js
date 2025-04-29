@@ -14,11 +14,16 @@ function mousemove()
 }
 
 mousemove();
-document.querySelector(".links a").addEventListener("click",()=>
-    {  
-    project.scrollIntoView({behavior:"smooth" })
-    
-    })
+
+    document.querySelectorAll(".links a").forEach(link => {
+        link.addEventListener("click", e => {
+     
+          project.scrollIntoView({ behavior: "smooth" });
+               e.preventDefault(); 
+         
+        });
+      });
+      
    
     function firstpageanim()
     {
@@ -34,35 +39,22 @@ document.querySelector(".links a").addEventListener("click",()=>
                 ease:Expo.easeInOut,
                 duration:2,
                 delay:-1,
-                
+                stagger:.2
+
     
 
             }
+
+        ).from(".links",
+            {
+                y:-10,
+                opacity:0,
+                duration:1.5,
+                delay:.1,
+                ease:Expo.easeInOut,
+            }
         )
     }
-    // function firstPageAnim() {
-    //     var tl = gsap.timeline();
-      
-    //     tl.from("#nav", {
-    //       y: "-10",
-    //       opacity: 0,
-    //       duration: 1.5,
-    //       ease: Expo.easeInOut,
-    //     })
-    //       .to(".boundingelem", {
-    //         y: 0,
-    //         ease: Expo.easeInOut,
-    //         duration: 2,
-    //         delay: -1,
-    //         stagger: 0.2,
-    //       })
-    //       .from("#herofooter", {
-    //         y: -10,
-    //         opacity: 0,
-    //         duration: 1.5,
-    //         delay: -1,
-    //         ease: Expo.easeInOut,
-    //       });
-    //   }
+    
     firstpageanim()
 

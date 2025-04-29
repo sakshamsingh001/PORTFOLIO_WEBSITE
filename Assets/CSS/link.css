@@ -1,11 +1,12 @@
 .links
 {
     display: flex;
-    width: 100%;
+    width: 100vw;
     justify-content: space-between;
     margin-top: 7vh;
     padding-left: 40px;
     padding-right: 2vw;
+   
     /* position: absolute;
     bottom: 3%; */
     

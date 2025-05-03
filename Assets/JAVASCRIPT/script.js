@@ -1,28 +1,72 @@
 
+let timeout;
 const scroll = new LocomotiveScroll({
     el: document.querySelector('#main'),   
     smooth: true
 });
+function circlechaptakaro()
+{
+    clearTimeout(timeout);
+    let xscale=1;
+    let yscale=1;
 
-function mousemove()
+    let xprev=0;
+    let yprev=0;
+     window.addEventListener("mousemove",(e)=>
+     {
+        let diffX=e.clientX-xprev;
+        let diffY=e.clientY-yprev;
+        xscale=gsap.utils.clamp(0.6,1.4,diffX);
+        yscale=gsap.utils.clamp(0.6,1.4,diffY);
+        xprev=e.clientX;
+        yprev=e.clientY;
+        mousemove(xscale,yscale);
+        timeout=setTimeout(()=>
+        {
+            document.querySelector(".circle").style.transform=`translate(${e.clientX}px,${e.clientY}px) scale(1,1)`;   
+
+        },100)
+
+
+
+     })
+        
+}
+
+
+circlechaptakaro();
+
+
+document.querySelectorAll(".elem").forEach((elem)=>
+    {
+        
+       elem.addEventListener("mousemove",(e)=>
+       {
+        console.log("mouse")
+       gsap.to(elem.querySelector("img"),
+       {
+        opacity:1,
+        ease:Power1,
+        display:"block",
+        
+       })
+       }
+    );
+      
+    });
+    
+
+function mousemove(xscale,yscale)
 {
     window.addEventListener("mousemove",(e)=>
     {
-       document.querySelector(".circle").style.transform=`translate(${e.clientX}px,${e.clientY}px)`;
-        
+       document.querySelector(".circle").style.transform=`translate(${e.clientX}px,${e.clientY}px) scale(${xscale},${yscale})`;       
     })
 }
 
-mousemove();
+// mousemove();
 
-    document.querySelectorAll(".links a").forEach(link => {
-        link.addEventListener("click", e => {
-     
-          project.scrollIntoView({ behavior: "smooth" });
-               e.preventDefault(); 
-         
-        });
-      });
+   
       
    
     function firstpageanim()
@@ -49,8 +93,8 @@ mousemove();
             {
                 y:-10,
                 opacity:0,
-                duration:1.5,
-                delay:.1,
+                duration:1,
+                delay:0,
                 ease:Expo.easeInOut,
             }
         )

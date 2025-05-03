@@ -40,16 +40,40 @@ circlechaptakaro();
 document.querySelectorAll(".elem").forEach((elem)=>
     {
         
+       let rotation=0;
+       elem.addEventListener("mouseleave",(e)=>
+        {
+         gsap.to(elem.querySelector("img"),
+     {
+        opacity:0,
+        display:"none",
+        duration:0.5,
+     })
+    
+        }
+     );
        elem.addEventListener("mousemove",(e)=>
        {
-        console.log("mouse")
-       gsap.to(elem.querySelector("img"),
-       {
-        opacity:1,
+        let diff=e.clientY-elem.getBoundingClientRect().top;
+      console.log(diff);
+      diffrot=e.clientX-rotation;
+      rotation=e.clientX;
+
+    
+
+        gsap.to(elem.querySelector("img"),
+    {
+       opacity:0.8,
+       display:"block",
         ease:Power1,
-        display:"block",
+        top:diff,
+        left:e.clientX,
+        rotate:  gsap.utils.clamp(-20,20,diffrot)
+   
         
-       })
+
+    })
+  
        }
     );
       
